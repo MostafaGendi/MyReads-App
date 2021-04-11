@@ -3,8 +3,7 @@ import './App.css'
 import Books from './components/books'
 import * as BooksAPI from './BooksAPI'
 import Search from './components/search'
-import { Link } from 'react-router-dom'
-import { Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 
 class App extends Component {
@@ -34,7 +33,6 @@ handleChange = (book, shelf)=>{
     <Route exact path="/search" render={()=> (
       <Search updateShelves={this.handleChange} books={this.state.books}/>
     )}/>
-
     </div>
   );
 }

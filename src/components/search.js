@@ -16,24 +16,7 @@ this.setState(()=>({
 
   query
   ? BooksAPI.search(query).then(books => (
-    books.error
-    ? this.setState({books: []})
-    : (this.setState({books: books}))
-
-  ))
-  : this.setState({
-    books: []
-  })
-
-}
-
-
-render(){
-
-  return(
-    <div className="d-flex justify-content-center flex-wrap p-3">
-
-    {this.state.books.map(book => {
+    books.map(book => {
       book.shelf = "none"
 
       this.props.books.map(b => (
@@ -41,8 +24,21 @@ render(){
         ? book.shelf = b.shelf
         :""
       ))
-    })}
 
+      books.error
+      ? this.setState({books: []})
+      : (this.setState({books: books}))
+    })
+
+  ))
+  : this.setState({
+    books: []
+  })
+}
+
+render(){
+  return(
+    <div className="d-flex justify-content-center flex-wrap p-3">
     <div className="input-group mb-3">
       <Link to="/" className="btn btn-outline-secondary" type="button" id="button-addon1">Home</Link>
       <input type="text" className="form-control" placeholder="Search a Book" value={this.state.query} onChange={(e)=> (this.updateQuery(e.target.value))} />

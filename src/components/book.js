@@ -15,7 +15,6 @@ function Book (props){
               ? props.book.authors.map(author => <footer key={author} className="blockquote-footer">{author}</footer>)
               : <footer key={props.book.authors} className="blockquote-footer">{props.book.authors}</footer>
             }
-            {console.log(props.book.authors)}
         </div>
       </div>
     )
