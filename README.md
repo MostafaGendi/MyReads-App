@@ -22,4 +22,5 @@ You can move any book any time to the shelf you like.
 Book status is saved along all the app, the main page and search page.
 
 ## Author
-  - Mostafa Gendi
+
+Mostafa Gendi
